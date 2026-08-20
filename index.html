@@ -3,139 +3,218 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Summer Splash | Fresh Steps & Fresh Breaths</title>
+  <title>Summer Splash | Stay Fresh All Day</title>
   <style>
-    :root {
-      --primary-blue: #0084c7;
-      --primary-green: #2e7d32;
-      --bg-color: #f4f9f9;
-      --text-color: #333;
-    }
-
+    /* Animated Rainbow-Splash Gradient Background */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      text-align: center;
+      background: linear-gradient(-45deg, #ff9a9e, #a1c4fd, #c2e9fb, #fecfef, #d4fc79, #8ec5fc);
+      background-size: 400% 400%;
+      animation: rainbowBG 12s ease infinite;
+      color: #222;
     }
 
+    @keyframes rainbowBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Multi-Color Header */
     header {
-      background: linear-gradient(135deg, #38ef7d, #11998e, #0084c7);
-      color: white;
-      padding: 40px 20px;
+      padding: 60px 20px 20px 20px;
+      text-align: center;
     }
 
     header h1 {
-      font-size: 2.8rem;
+      font-size: 4rem;
       margin: 0;
+      background: linear-gradient(to right, #ff007f, #7928ca, #0070f3, #38ef7d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 4px 15px rgba(0,0,0,0.1);
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
+      color: #333;
+      font-weight: 700;
       margin-top: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
     }
 
+    /* Glass Container */
     .container {
       max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
+      margin: 0 auto 60px auto;
+      padding: 40px 30px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(15px);
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      border: 2px solid rgba(255, 255, 255, 0.8);
     }
 
+    .quote-box {
+      text-align: center;
+      font-size: 1.8rem;
+      font-style: italic;
+      background: linear-gradient(to right, #d81b60, #8e24aa, #1e88e5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 35px;
+      font-weight: 800;
+    }
+
+    /* Product Cards Grid */
     .products-grid {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 25px;
-      justify-content: center;
-      margin-top: 25px;
+      margin-bottom: 35px;
     }
 
-    .card {
-      background: white;
-      border-radius: 14px;
-      padding: 25px;
-      width: 360px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    .product-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      text-align: left;
+      position: relative;
+      overflow: hidden;
     }
 
-    .card.freshmist {
-      border-top: 6px solid var(--primary-blue);
+    .product-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     }
 
-    .card.soleshield {
-      border-top: 6px solid var(--primary-green);
+    /* Card Themes */
+    .card-soleshield {
+      border-top: 8px solid #38ef7d;
     }
 
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.8rem;
+    .card-freshmist {
+      border-top: 8px solid #36d1dc;
     }
 
-    .card.freshmist h2 { color: var(--primary-blue); }
-    .card.soleshield h2 { color: var(--primary-green); }
-
-    .flavor-list {
-      list-style: none;
-      padding: 0;
-      margin: 15px 0;
+    .product-icon {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
     }
 
-    .flavor-list li {
-      margin: 6px 0;
-      padding: 8px 12px;
-      border-radius: 6px;
+    .product-card h2 {
+      font-size: 2.2rem;
+      margin: 10px 0 5px 0;
+    }
+
+    .card-soleshield h2 {
+      color: #1b5e20;
+    }
+
+    .card-freshmist h2 {
+      color: #005c97;
+    }
+
+    .product-subtitle {
+      font-size: 1rem;
       font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      color: #666;
+      margin-bottom: 15px;
+      text-transform: uppercase;
     }
 
-    .freshmist .flavor-list li {
-      background: #eef7fc;
-      color: #026aa7;
+    .price-badge {
+      display: inline-block;
+      align-self: center;
+      padding: 8px 22px;
+      border-radius: 50px;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
 
-    .soleshield .flavor-list li {
-      background: #eaf5ea;
-      color: #1e5622;
+    .price-soleshield {
+      background: linear-gradient(135deg, #11998e, #38ef7d);
     }
 
+    .price-freshmist {
+      background: linear-gradient(135deg, #005c97, #36d1dc);
+    }
+
+    .product-desc {
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+
+    /* Gradient Buttons */
     .btn {
-      display: block;
-      padding: 12px 18px;
+      display: inline-block;
+      padding: 16px 30px;
+      color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 50px;
+      font-size: 1.1rem;
       font-weight: bold;
-      text-align: center;
-      margin-top: 20px;
-      transition: opacity 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-soleshield {
+      background: linear-gradient(135deg, #11998e, #38ef7d);
+      box-shadow: 0 8px 20px rgba(56, 239, 125, 0.4);
+    }
+
+    .btn-freshmist {
+      background: linear-gradient(135deg, #005c97, #36d1dc);
+      box-shadow: 0 8px 20px rgba(54, 209, 220, 0.4);
     }
 
     .btn:hover {
-      opacity: 0.9;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
     }
 
-    .btn-blue {
-      background-color: var(--primary-blue);
-      color: white;
-    }
-
-    .btn-green {
-      background-color: var(--primary-green);
-      color: white;
-    }
-
-    footer {
-      margin-top: 50px;
+    /* Brand Highlights Section */
+    .highlights-box {
+      background: #ffffff;
+      border-radius: 18px;
       padding: 25px;
-      background: #e2ece9;
-      font-size: 0.95rem;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+      border-left: 6px solid #ff007f;
+    }
+
+    .highlights-box h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: #ff007f;
+    }
+
+    .highlights-grid {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .highlight-item {
+      font-weight: 700;
       color: #444;
+      font-size: 1.05rem;
     }
   </style>
 </head>
@@ -143,57 +222,51 @@
 
   <header>
     <h1>Summer Splash</h1>
-    <p>For Fresh Steps & Fresh Breaths</p>
+    <p>Stay Fresh All Day</p>
   </header>
 
   <div class="container">
-    <h2>Our Products</h2>
+    <div class="quote-box">"Small Spray; Big Difference! 🤍"</div>
 
     <div class="products-grid">
       
       <!-- Sole Shield Card -->
-      <div class="card soleshield">
+      <div class="product-card card-soleshield">
         <div>
+          <div class="product-icon">👟</div>
           <h2>Sole Shield</h2>
-          <p><strong>Shoe Deodorising Spray</strong></p>
-          <p>Eliminate odor and keep your shoes fresh all day long with our long-lasting formula.</p>
-          
-          <p style="margin-top: 15px; margin-bottom: 5px;"><strong>Available Fragrances:</strong></p>
-          <ul class="flavor-list">
-            <li>🍋 Lemon</li>
-            <li>🌹 Rose</li>
-            <li>🌿 Mint</li>
-            <li>🌱 Eucalyptus</li>
-          </ul>
+          <div class="product-subtitle">Shoe Deodorising Spray</div>
+          <div class="price-badge price-soleshield">₹75</div>
+          <p class="product-desc">Eliminates stubborn shoe odors and stops odor-causing bacteria instantly. Perfect for school, sports, and sneakers!</p>
         </div>
-        <a href="soleshield.html" class="btn btn-green">View Sole Shield Details</a>
+        <a href="soleshield.html" class="btn btn-soleshield">View Sole Shield →</a>
       </div>
 
       <!-- Fresh Mist Card -->
-      <div class="card freshmist">
+      <div class="product-card card-freshmist">
         <div>
+          <div class="product-icon">💧</div>
           <h2>Fresh Mist</h2>
-          <p><strong>Mouth Freshener Spray</strong></p>
-          <p>Instant fresh breath anywhere, anytime! Natural, alcohol-free, and refreshing.</p>
-          
-          <p style="margin-top: 15px; margin-bottom: 5px;"><strong>Available Flavors:</strong></p>
-          <ul class="flavor-list">
-            <li>🌿 Mint</li>
-            <li>🍇 Grape Mint</li>
-            <li>🌱 Clove</li>
-            <li>🍓 Strawberry</li>
-          </ul>
+          <div class="product-subtitle">Mouth Freshener Spray</div>
+          <div class="price-badge price-freshmist">₹60</div>
+          <p class="product-desc">Instantly freshens breath with a cool burst of flavor. Pocket-sized convenience for confidence wherever you go!</p>
         </div>
-        <a href="freshmist.html" class="btn btn-blue">View Fresh Mist Details</a>
+        <a href="freshmist.html" class="btn btn-freshmist">View Fresh Mist →</a>
       </div>
 
     </div>
-  </div>
 
-  <footer>
-    <p>Thank you for supporting our young initiative. Your support inspires us! ❤️</p>
-    <p>© 2026 Summer Splash</p>
-  </footer>
+    <!-- Features Banner -->
+    <div class="highlights-box">
+      <h3>Why Choose Summer Splash?</h3>
+      <div class="highlights-grid">
+        <span class="highlight-item">⚡ Instant Freshness</span>
+        <span class="highlight-item">👜 Pocket-Friendly</span>
+        <span class="highlight-item">🌈 Premium Flavors & Fragrances</span>
+      </div>
+    </div>
+
+  </div>
 
 </body>
 </html>
