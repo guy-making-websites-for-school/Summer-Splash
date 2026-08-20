@@ -1,194 +1,199 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summer Splash | Stay Fresh All Day!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        body {
-            /* This recreates the soft pastel iridescent background from the screenshots */
-            background: linear-gradient(135deg, #fdfbfb 0%, #e6f0ff 30%, #fef3ff 70%, #fdfbfb 100%);
-            background-attachment: fixed;
-            color: #4b5563;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summer Splash | Fresh Steps & Fresh Breaths</title>
+  <style>
+    :root {
+      --primary-blue: #0084c7;
+      --primary-green: #2e7d32;
+      --bg-color: #f4f9f9;
+      --text-color: #333;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      text-align: center;
+    }
 
-        .title {
-            color: #3b82f6;
-            font-size: 2.5em;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
+    header {
+      background: linear-gradient(135deg, #38ef7d, #11998e, #0084c7);
+      color: white;
+      padding: 40px 20px;
+    }
 
-        .intro-text {
-            font-size: 1.1em;
-            margin-bottom: 40px;
-            color: #6b7280;
-        }
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+    }
 
-        .product-preview {
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid rgba(255,255,255,0.8);
-        }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
 
-        .product-title {
-            font-size: 1.5em;
-            color: #4b5563;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
 
-        .product-subtitle {
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 15px;
-        }
+    .products-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      margin-top: 25px;
+    }
 
-        .color-list {
-            list-style: none;
-            margin-bottom: 20px;
-        }
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      width: 360px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+    }
 
-        .color-list li {
-            margin-bottom: 8px;
-            font-size: 1.05em;
-        }
+    .card.freshmist {
+      border-top: 6px solid var(--primary-blue);
+    }
 
-        .see-product-btn {
-            display: inline-block;
-            background: #e0e7ff;
-            color: #3730a3;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.2s;
-            margin-top: 15px;
-        }
+    .card.soleshield {
+      border-top: 6px solid var(--primary-green);
+    }
 
-        .see-product-btn:hover {
-            background: #c7d2fe;
-            transform: translateY(-2px);
-        }
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
 
-        /* The blue feature cards from the screenshot */
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 40px;
-        }
+    .card.freshmist h2 { color: var(--primary-blue); }
+    .card.soleshield h2 { color: var(--primary-green); }
 
-        .feature-card {
-            background: #dbeafe;
-            border-radius: 16px;
-            padding: 25px;
-            color: #1e3a8a;
-        }
+    .flavor-list {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0;
+    }
 
-        .feature-icon {
-            font-size: 24px;
-            margin-bottom: 10px;
-            background: rgba(255,255,255,0.5);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
+    .flavor-list li {
+      margin: 6px 0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-        .feature-title {
-            font-weight: 700;
-            margin-bottom: 5px;
-            font-size: 1.1em;
-        }
-    </style>
+    .freshmist .flavor-list li {
+      background: #eef7fc;
+      color: #026aa7;
+    }
+
+    .soleshield .flavor-list li {
+      background: #eaf5ea;
+      color: #1e5622;
+    }
+
+    .btn {
+      display: block;
+      padding: 12px 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .btn-blue {
+      background-color: var(--primary-blue);
+      color: white;
+    }
+
+    .btn-green {
+      background-color: var(--primary-green);
+      color: white;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 25px;
+      background: #e2ece9;
+      font-size: 0.95rem;
+      color: #444;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Main Header & Intro -->
-        <h1 class="title">☀️ Summer Splash — Stay Fresh All Day!</h1>
-        <p class="intro-text">
-            Beat the heat with our vibrant new line of personal-care sprays. Lightweight, refreshing, and totally Insta-worthy — Summer Splash keeps you cool, confident, and ready for anything summer throws your way. From sandy toes to sweet breath, we've got you covered.
-        </p>
+  <header>
+    <h1>Summer Splash</h1>
+    <p>For Fresh Steps & Fresh Breaths</p>
+  </header>
 
-        <!-- Product 1: SoleShield -->
-        <div class="product-preview">
-            <h2 class="product-title">👟 SoleShield (Shoe Deodorant Spray)</h2>
-            <p class="product-subtitle">Cylinder Bottle • 3 Vibrant Colors</p>
-            <ul class="color-list">
-                <li>🌸 <strong>Pink</strong> — Sweet & Floral</li>
-                <li>🌿 <strong>Green</strong> — Fresh & Minty</li>
-                <li>💜 <strong>Purple</strong> — Cool & Lavender</li>
-            </ul>
-            <a href="soleshield.html" class="see-product-btn">See Product Details</a>
+  <div class="container">
+    <h2>Our Products</h2>
+
+    <div class="products-grid">
+      
+      <!-- Sole Shield Card -->
+      <div class="card soleshield">
+        <div>
+          <h2>Sole Shield</h2>
+          <p><strong>Shoe Deodorising Spray</strong></p>
+          <p>Eliminate odor and keep your shoes fresh all day long with our long-lasting formula.</p>
+          
+          <p style="margin-top: 15px; margin-bottom: 5px;"><strong>Available Fragrances:</strong></p>
+          <ul class="flavor-list">
+            <li>🍋 Lemon</li>
+            <li>🌹 Rose</li>
+            <li>🌿 Mint</li>
+            <li>🌱 Eucalyptus</li>
+          </ul>
         </div>
+        <a href="soleshield.html" class="btn btn-green">View Sole Shield Details</a>
+      </div>
 
-        <!-- Product 2: FreshMist -->
-        <div class="product-preview">
-            <h2 class="product-title">❄️ FreshMist (Mouth Freshener Spray)</h2>
-            <p class="product-subtitle">Rectangular Bottle • 2 Cool Shades</p>
-            <ul class="color-list">
-                <li>💙 <strong>Blue</strong> — Ocean Mint</li>
-                <li>💜 <strong>Purple</strong> — Berry Burst</li>
-            </ul>
-            <a href="freshmist.html" class="see-product-btn">See Product Details</a>
+      <!-- Fresh Mist Card -->
+      <div class="card freshmist">
+        <div>
+          <h2>Fresh Mist</h2>
+          <p><strong>Mouth Freshener Spray</strong></p>
+          <p>Instant fresh breath anywhere, anytime! Natural, alcohol-free, and refreshing.</p>
+          
+          <p style="margin-top: 15px; margin-bottom: 5px;"><strong>Available Flavors:</strong></p>
+          <ul class="flavor-list">
+            <li>🌿 Mint</li>
+            <li>🍇 Grape Mint</li>
+            <li>🌱 Clove</li>
+            <li>🍓 Strawberry</li>
+          </ul>
         </div>
+        <a href="freshmist.html" class="btn btn-blue">View Fresh Mist Details</a>
+      </div>
 
-        <!-- Feature Cards -->
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">💧</div>
-                <div class="feature-title">Lightweight Formula</div>
-                <p>Non-sticky, fast-drying — no residue, ever.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🌿</div>
-                <div class="feature-title">Gentle & Safe</div>
-                <p>Formulated for everyday use on skin and fabric.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">☀️</div>
-                <div class="feature-title">Summer-Ready Scents</div>
-                <p>Bright, energizing fragrances made for the season.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🛍️</div>
-                <div class="feature-title">Grab & Go</div>
-                <p>Compact bottles fit in any bag or pocket.</p>
-            </div>
-
-            <div class="feature-card" style="background: #e0e7ff;">
-                <p>✨ <strong>Summer Splash</strong> — Your essential duo for staying fresh from head to toe.</p>
-            </div>
-        </div>
     </div>
+  </div>
+
+  <footer>
+    <p>Thank you for supporting our young initiative. Your support inspires us! ❤️</p>
+    <p>© 2026 Summer Splash</p>
+  </footer>
 
 </body>
 </html>
