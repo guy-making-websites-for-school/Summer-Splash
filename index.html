@@ -151,7 +151,7 @@
       transform: scale(1.05);
     }
 
-    /* Section Cards */
+    /* Section Cards with Hover */
     .info-card {
       background: #ffffff;
       border-radius: 18px;
@@ -159,6 +159,12 @@
       margin-bottom: 25px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.05);
       border-left: 8px solid #ff007f;
+      transition: all 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
     }
 
     .info-card h2 {
@@ -188,9 +194,15 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     }
 
-    /* Stall Location Card */
+    .why-list li:hover {
+      transform: scale(1.02) translateX(8px);
+    }
+
+    /* Stall Location Card with Hover */
     .stall-card {
       background: linear-gradient(135deg, #005c97, #36d1dc);
       color: white;
@@ -198,6 +210,12 @@
       padding: 25px;
       text-align: center;
       box-shadow: 0 10px 25px rgba(0, 92, 151, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .stall-card:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 0 15px 35px rgba(0, 92, 151, 0.4);
     }
 
     .stall-card h2 {
@@ -215,6 +233,12 @@
       display: inline-block;
       margin-top: 5px;
       border: 2px solid rgba(255, 255, 255, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .stall-card:hover .stall-location {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
     }
   </style>
 </head>
